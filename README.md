@@ -1,2 +1,0 @@
-# DuoMoney
-PI Projeto integrado
