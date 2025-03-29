@@ -8,7 +8,7 @@ class Rank:
         # Copia os dados para ranking como pares [pontuacao, usuario]
         self.ranking = []
         for u in self.usuarios:
-            pontos = u.pontuacao.pontos if u.pontuacao is not None else 0
+            pontos = u._Usuario__carteira.pontos if u._Usuario__carteira is not None else 0
             self.ranking.append([pontos, u])
 
         # Algoritmo Insertion Sort
