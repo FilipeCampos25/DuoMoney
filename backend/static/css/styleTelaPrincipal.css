@@ -1,0 +1,317 @@
+:root{
+    --preto: black;
+    --branco: white;
+    --azul: rgb(0, 87, 183);
+    --azulescuro: rgb(0, 0, 255);
+    --azulclaro: rgb(0, 81, 255);
+    --laranja: rgb(245, 124, 0);
+    --laranjaclaro: rgb(255, 119, 0);
+    --laranjaforte: rgb(235, 74, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom right, var(--azul), var(--azulescuro));
+    line-height: 1.6;
+    height: 100%;
+    min-height: 100vh;
+    color: var(--laranja);
+}
+
+.tela {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.tela.ativa {
+    display: block;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 100px; 
+    margin-bottom: 60px;
+    min-height: calc(100vh - 160px); 
+    position: relative;
+}
+
+.tela h1 {
+    color: var(--laranja);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tela p {
+    color: var(--branco);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.header-container {
+    background-color: var(--azul);
+    backdrop-filter: blur(10px);
+    color: var(--laranja);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    height: 100px; /* Definir uma altura fixa para o header */
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.mascote {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--laranjaclaro);
+    transition: transform 0.4s ease, border-color 0.3s ease;
+    object-fit: cover;
+}
+
+.mascote:hover {
+    transform: rotate(360deg) scale(1.15);
+    border-color: var(--laranjaforte);
+}
+
+.user-info {
+    text-align: center;
+}
+
+.username {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.points {
+    font-size: 1.1rem;
+    color: var(--laranjaclaro);
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.points::before {
+    content: '★';
+    color: gold;
+}
+
+.header-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-button {
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(45deg, var(--laranja), var(--laranjaforte));
+    border: none;
+    border-radius: 25px;
+    color: var(--branco);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: linear-gradient(45deg, var(--laranjaforte), var(--laranja));
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 90px;
+    z-index: 999;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--laranja), var(--laranjaforte));
+    transition: width 0.5s ease;
+}
+
+.welcome-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transform: translateZ(0);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-section:hover {
+    transform: translateY(-5px) translateZ(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-section h2::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background: var(--laranjaclaro);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.welcome-section:hover h2::after {
+    width: 100%;
+}
+
+.action-button {
+    padding: 0.8rem 2rem;
+    background-color: var(--azul);
+    color: var(--branco);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-button::before {
+    content: '▶';
+    font-size: 1rem;
+}
+
+.action-button:hover {
+    background: linear-gradient(45deg, var(--azul), var(--azulclaro));
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.exercises-container {
+    display: none;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.exercises-container.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.exercise-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--laranja), var(--laranjaforte));
+    color: var(--branco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.exercise-circle:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.exercise-circle.completed {
+    background: linear-gradient(135deg, #00cc00, #009900);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.footer-container {
+    background-color: var(--azul);
+    backdrop-filter: blur(10px);
+    color: var(--branco);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+}
+
+.footer-link {
+    flex: 1;
+    text-decoration: none;
+    color: var(--branco);
+    padding: 1rem;
+    background-color: var(--laranja);
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-right: 1px solid var(--laranja);
+    border: none;
+    cursor: pointer;
+}
+
+.footer-link:last-child {
+    border-right: none;
+}
+
+.footer-link:hover {
+    background: linear-gradient(45deg, var(--laranjaforte), var(--laranja));
+    color: var(--branco);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styleCadastro.css">
+    <title>Monedu | Cadastro</title>
+</head>
+<body>
+
+    <!-- Tela de entrada -->
+
+    <div id="inicio">
+        <div id="ajuste">
+            <h2> Bem vindo(a) ao </h2>
+            <h1> Monedu </h1>
+            <button id="fecharInicio" onclick="subirTelaInicio()">Começar</button>
+        </div>
+    </div>
+
+    <!-- Login -->
+
+    <div id="login">
+        <h1 class="login">Login</h1>
+        <form method="POST" action="/submit" class="log">
+            <input type="text" name="username" placeholder="usuario">
+            <input type="password" name="password" placeholder="senha">
+            <input type="submit" value="acessar">
+            <button class="buttonlog" type="button" onclick="Blurlogin()">criar minha conta</button>
+        </form>
+    </div>
+        
+    <!-- Cadastro -->
+
+    <div id="cadastro">
+        <h1 class="cadastro">Cadastro</h1>
+        <form method="POST" action="/submit" class="cad">
+            <input type="text" name="username" placeholder="usuario">
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="password" placeholder="senha">
+            <input type="password" name="confirm_password" placeholder="confirmar senha">
+            <input type="date" name="birth_date" placeholder="Data nascimento">
+            <input type="submit" value="Enviar">
+            <button class="buttoncad" type="button" onclick="Blurcadastro()">entrar</button>
+        </form>
+    </div>
+    <script src="/static/script/scriptCadastro.js"></script>
+</body>
+</html>
